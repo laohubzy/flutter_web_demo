@@ -1,4 +1,4 @@
-FROM node
+FROM flutter
 
 
 RUN flutter packages get
