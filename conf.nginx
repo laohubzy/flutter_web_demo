@@ -1,0 +1,55 @@
+events {
+  #参考事件模型，use [ kqueue | rtsig | epoll | /dev/poll | select | poll ]; epoll模型是Linux 2.6>以上版本内核中的高性能网络I/O模型，如果跑在FreeBSD上面，就用kqueue模型。
+  use epoll;
+  #单个进程最大连接数（最大连接数=连接数*进程数）
+  worker_connections  20000;
+}
+
+http {
+  include mime.types;
+  default_type application/octet-stream;
+
+  keepalive_timeout 65;
+
+  sendfile on;
+
+  gzip on; #开启gzip压缩输出
+  gzip_min_length  1k; #最小压缩文件大小
+  gzip_buffers 4 16k; #压缩缓冲区
+  gzip_http_version 1.1;
+  gzip_comp_level 2; #压缩等级
+  gzip_types text/plain application/x-javascript text/javascript application/javascript text/css application/xml application/json image/jpeg image/gif image/png;
+  gzip_vary on;
+
+  server {
+    listen 80;
+
+    # 缓存配置
+    location ~ .*\.(css|js) {
+      etag on;
+      expires 30d;
+      add_header Cache-Control "public";
+    }
+
+    location ~ .*\.sw\.js$ {
+      expires -1;
+    }
+
+    location ~ .*\.(html|xml|json) {
+      etag on;
+      expires -1;
+    }
+
+    location ~ .*\.(png|jpe?g|webp|gif|woff|otf|ttf|svg|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc) {
+      etag on;
+      expires 30d;
+      add_header Cache-Control "public";
+    }
+
+    location ^~ {
+      root  /usr/share/nginx/html;
+      index index.html index.htm;
+      try_files $uri $uri/ /index.html;
+    }
+  }
+}
