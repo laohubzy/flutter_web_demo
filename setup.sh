@@ -14,13 +14,13 @@ cd $path
 # docker rmi --force $(docker images | grep flutter/web | awk '{print $3}')
 
 # 构建flutter/web镜像
-docker build -t flutter/web -f '$path/Dockerfile' .
+docker build -t flutter/web:$image_version '$path/Dockerfile' .
 
 # 查看镜像列表
 docker images;
 
 # 基于flutter/web 镜像 构建一个容器 flutter_web
-docker run -p 9527:80 -d --name flutter_web flutter/web;
+docker run -p 9527:80 -d --name flutter_web flutter/web:$image_version;
 
 # 查看日志
 docker logs flutter_web;
