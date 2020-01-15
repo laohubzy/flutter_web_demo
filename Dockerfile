@@ -1,4 +1,4 @@
-FROM flutter
+FROM flutter/beta
 
 
 RUN flutter packages get
