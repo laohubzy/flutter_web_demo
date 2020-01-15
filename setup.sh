@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 image_version=`date +%Y%m%d%H%M`;
-path = '/home/jenkins/jenkins_home/workspace/flutter_web_demo';
+path = `/home/jenkins/jenkins_home/workspace/flutter_web_demo`;
 
 cd $path;
+ls;
 
 # 关闭flutter_web容器
 # docker stop flutter_web || true
