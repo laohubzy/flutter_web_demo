@@ -1,8 +1,8 @@
 FROM cirrusci/flutter:stable
 WORKDIR /app
 COPY pubspec*.yaml ./
+RUN flutter pub get
 RUN flutter clean
-RUN flutter packages get
 Run flutter build web
 
 FROM nginx
