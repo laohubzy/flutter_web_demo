@@ -1,10 +1,3 @@
-FROM cirrusci/flutter
-
-# RUN flutter clean
-# RUN flutter packages get
-# RUN flutter build web
-
-
 FROM nginx
 
 COPY build/web /usr/share/nginx/html/
