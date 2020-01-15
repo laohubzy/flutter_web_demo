@@ -14,7 +14,7 @@ cd $path
 # docker rmi --force $(docker images | grep flutter/web | awk '{print $3}')
 
 # 构建flutter/web镜像
-docker build . -t flutter/web:$image_version
+docker build . -t flutter/web:$image_version;
 
 # 查看镜像列表
 docker images;
