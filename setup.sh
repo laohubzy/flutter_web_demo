@@ -13,15 +13,15 @@ image_version=`date +%Y%m%d%H%M`;
 
 # 删除flutter/web镜像
 # docker rmi --force $(docker images | grep flutter/web | awk '{print $3}')
-docker pull cirrusci/flutter;
+# docker pull cirrusci/flutter;
 
 docker run --rm -it -v ${PWD}:/build --workdir /build cirrusci/flutter:stable flutter build web;
 
 # 构建flutter/web镜像
-docker build . -t flutter/web:$image_version;
+# docker build . -t flutter/web:$image_version;
 # FROM cirrusci/flutter
 # 查看镜像列表
-docker images;
+# docker images;
 
 # 基于flutter/web 镜像 构建一个容器 flutter_web
 # docker run -p 9527:80 -d --name flutter_web flutter/web:$image_version;
