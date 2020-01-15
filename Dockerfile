@@ -1,6 +1,6 @@
-FROM flutter/beta
+FROM cirrusci/flutter
 
-
+RUN flutter clean
 RUN flutter packages get
 RUN flutter build web
 
