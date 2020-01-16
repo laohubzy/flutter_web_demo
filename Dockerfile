@@ -4,8 +4,7 @@ RUN mkdir -p /app
 WORKDIR /app
 COPY . /app
 RUN flutter config --enable-web
-RUN flutter packages get
-RUN flutter clean
+RUN flutter pub get
 RUN flutter build apk
 
 
