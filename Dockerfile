@@ -2,11 +2,11 @@ FROM cirrusci/flutter:stable
 USER root
 RUN mkdir -p /app
 WORKDIR /app
-COPY . /app \
-    && flutter config --enable-web \
-    && flutter packages get \
-    && flutter clean \
-    && flutter build web
+COPY . /app
+RUN flutter config --enable-web
+RUN flutter packages get
+RUN flutter clean
+RUN flutter build web
 
 
 FROM nginx
