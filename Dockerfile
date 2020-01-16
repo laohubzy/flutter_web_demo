@@ -3,6 +3,7 @@ USER root
 RUN mkdir -p /app
 WORKDIR /app
 COPY . /app \
+    && flutter pub get \
     && flutter packages get \
     && flutter config --enable-web \
     && flutter clean \
