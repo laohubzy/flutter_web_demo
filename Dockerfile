@@ -1,11 +1,11 @@
-FROM cirrusci/flutter:stable
+FROM cirrusci/flutter:beta-web
 USER root
 RUN mkdir -p /app
 WORKDIR /app
 COPY . /app
 RUN flutter config --enable-web
-RUN sudo flutter pub get
-RUN sudo flutter build web
+RUN flutter pub get
+RUN flutter build web
 
 
 FROM nginx
