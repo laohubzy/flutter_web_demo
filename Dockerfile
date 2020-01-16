@@ -3,10 +3,9 @@ USER root
 RUN mkdir -p /app
 WORKDIR /app
 COPY . /app
-RUN flutter channel beta
-RUN flutter upgrade
 RUN flutter config --enable-web
-RUN flutter pub get
+RUN flutter clean
+RUN flutter packages get
 Run flutter build web
 
 FROM nginx
