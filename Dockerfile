@@ -2,7 +2,6 @@ FROM cirrusci/flutter:stable
 WORKDIR /app
 COPY pubspec*.yaml ./
 RUN flutter pub get
-RUN flutter clean
 Run flutter build web
 
 FROM nginx
