@@ -1,4 +1,5 @@
 FROM cirrusci/flutter:stable
+USER root
 WORKDIR /app
 COPY pubspec*.yaml ./
 RUN flutter pub get
