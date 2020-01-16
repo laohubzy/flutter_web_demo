@@ -1,11 +1,11 @@
-FROM nexcer/flutter-web
+FROM cirrusci/flutter:stable
 USER root
 RUN mkdir -p /app
 WORKDIR /app
 COPY . /app
 RUN flutter config --enable-web
-RUN flutter pub get
-RUN flutter build web
+RUN sudo flutter pub get
+RUN sudo flutter build web
 
 
 FROM nginx
