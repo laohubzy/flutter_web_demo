@@ -1,4 +1,4 @@
-FROM cirrusci/flutter:beta-web
+FROM cirrusci/flutter:beta
 USER root
 RUN mkdir -p /app
 WORKDIR /app
