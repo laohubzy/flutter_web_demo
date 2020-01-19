@@ -3,6 +3,7 @@ USER root
 RUN mkdir -p /app
 WORKDIR /app 
 COPY . /app
+RUN flutter config --enable-web
 RUN flutter build web 
 
  
