@@ -1,15 +1,15 @@
-FROM cirrusci/flutter:beta
-USER root
-# RUN mkdir /app
+# FROM cirrusci/flutter:beta
+# USER root
+# # RUN mkdir /app
 
-WORKDIR /app 
-COPY . /app
-RUN ls \
-&& flutter --version \
-&& ls \
-&& flutter config --enable-web 
-# \
-# && flutter build web 
+# WORKDIR /app 
+# COPY . /app
+# RUN ls \
+# && flutter --version \
+# && ls \
+# && flutter config --enable-web 
+# # \
+# # && flutter build web 
 
  
 
@@ -20,5 +20,6 @@ FROM nginx
 RUN ls 
 WORKDIR /app 
 RUN ls 
-# COPY ./build/web /home/app/
+COPY ./home/app/
+RUN ls 
 EXPOSE 80
