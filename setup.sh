@@ -20,7 +20,7 @@ image_version=`date +%Y%m%d%H%M`;
 # 构建flutter/web镜像
 docker build . -t flutter/web:$image_version;
 # FROM cirrusci/flutter
-# 查看镜像列表
+# 查看镜像列表 re
 docker images;
 
 # 基于flutter/web 镜像 构建一个容器 flutter_web
