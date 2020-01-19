@@ -6,8 +6,9 @@ WORKDIR /app
 RUN ls \
 && ls \
 && flutter --version \
-&& flutter config --enable-web \
-&& flutter build web 
+&& flutter config --enable-web 
+# \
+# && flutter build web 
 
  
 
@@ -16,5 +17,6 @@ FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
 RUN ls 
 WORKDIR /app 
-COPY ./build/web /home/app/
+RUN ls 
+# COPY ./build/web /home/app/
 EXPOSE 80
