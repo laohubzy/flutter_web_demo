@@ -9,7 +9,7 @@ RUN flutter --version \
 
 
 FROM nginx
-
+COPY /app/build/web /home/app/
 COPY conf.nginx /etc/nginx/nginx.conf
 
 EXPOSE 80

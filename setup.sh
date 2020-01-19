@@ -15,7 +15,7 @@ image_version=`date +%Y%m%d%H%M`;
 # docker rmi --force $(docker images | grep flutter/web | awk '{print $3}')
 # docker pull cirrusci/flutter;
 # docker build . -t flutter/web:$image_version;
-# docker run --rm -it -v ${PWD}:/build --workdir /build cirrusci/flutter:stable flutter build web;
+# docker run --rm -it -v ${PWD}:/build --workdir /build cirrusci/flutter:beta flutter build web;
 
 # 构建flutter/web镜像
 docker build . -t flutter/web:$image_version;
