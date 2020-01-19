@@ -16,7 +16,7 @@ RUN ls \
 
 FROM nginx
 # COPY conf.nginx /etc/nginx/nginx.conf
-RUN mkdir /app
+# RUN mkdir /app
 RUN ls 
 WORKDIR /app 
 RUN ls 
