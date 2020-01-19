@@ -10,7 +10,6 @@ COPY . /app \
 
 
 FROM nginx
-WORKDIR /app
 COPY /app/build/web /home/app/
 COPY conf.nginx /etc/nginx/nginx.conf
 
