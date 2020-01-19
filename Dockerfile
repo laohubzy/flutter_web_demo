@@ -1,6 +1,7 @@
 FROM cirrusci/flutter:beta
 USER root
 RUN mkdir -p /app
+WORKDIR /app 
 COPY . /app
 RUN flutter build web 
 
