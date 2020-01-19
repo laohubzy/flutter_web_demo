@@ -1,6 +1,5 @@
 FROM cirrusci/flutter:beta
 USER root
-RUN mkdir /app
 WORKDIR /app 
 COPY . /app 
 RUN flutter config --enable-web 
@@ -10,7 +9,7 @@ RUN flutter build web
 
 
 FROM nginx
-COPY /app/build/web /home/app/
 COPY conf.nginx /etc/nginx/nginx.conf
-
+WORKDIR /app 
+COPY /app/build/web /home/app/
 EXPOSE 80
