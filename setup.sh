@@ -28,7 +28,7 @@ image_version=`date +%Y%m%d%H%M`;
 # # 查看日志
 # docker logs flutter_web;
 
-# #删除build过程中产生的镜像 
+# #删除build过程中产生的镜像 re
 # docker rmi $(docker images -f "dangling=true" -q)
 
 # # 对空间进行自动清理
