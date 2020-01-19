@@ -1,5 +1,5 @@
 # FROM cirrusci/flutter:beta
-FROM oursky/flutter:v1.7.8-hotfix.4
+FROM nexcer/flutter-web
 USER root
 
 WORKDIR /app 
