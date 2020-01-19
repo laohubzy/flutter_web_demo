@@ -13,10 +13,10 @@ RUN ls \
  
 
 
-# FROM nginx
+FROM nginx
 # COPY conf.nginx /etc/nginx/nginx.conf
-# RUN ls 
-# WORKDIR /app 
-# RUN ls 
-# # COPY ./build/web /home/app/
-# EXPOSE 80
+RUN ls 
+WORKDIR /app 
+RUN ls 
+# COPY ./build/web /home/app/
+EXPOSE 80
