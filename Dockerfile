@@ -6,7 +6,7 @@ COPY . /app
 RUN flutter --version 
 # \
 # && flutter config --enable-web \
-# && flutter build web
+# && flutter build web  
 
 
 # FROM nginx
