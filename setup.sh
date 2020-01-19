@@ -33,5 +33,5 @@ image_version=`date +%Y%m%d%H%M`;
 
 # # 对空间进行自动清理
 # docker system prune -a -f
-
+cd /home/jenkins/jenkins_home/workspace/flutter_web_demo
 docker run --rm -it -v ${PWD}:/build --workdir /build cirrusci/flutter:stable flutter  build web
