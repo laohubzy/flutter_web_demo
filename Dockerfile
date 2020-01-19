@@ -1,6 +1,6 @@
 FROM cirrusci/flutter:beta
 USER root
-&& mkdir -p /app
+RUN mkdir -p /app
 WORKDIR /app
 COPY . /app
 RUN flutter --version \
