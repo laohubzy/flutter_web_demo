@@ -31,7 +31,7 @@ docker logs flutter_web;
 docker stop flutter_web
 docker rm flutter_web
 docker image rm  flutter/web:$image_version
-docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
+# docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
 # #删除build过程中产生的镜像 re
 # docker rmi $(docker images -f "dangling=true" -q)
 
