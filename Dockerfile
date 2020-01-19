@@ -20,7 +20,7 @@ RUN ls
 # WORKDIR /app 
 # RUN ls 
 # 将上阶段产物复制
-COPY --from=0 /app /app
+COPY --from=0 /app/build/web /app
 WORKDIR /app 
 RUN ls 
 # COPY ./build/web /home/app/
