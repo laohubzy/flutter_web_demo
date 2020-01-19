@@ -12,5 +12,5 @@ RUN flutter config --enable-web \
 FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
 WORKDIR /app 
-COPY /app/build/web /home/app/
+COPY ./build/web /home/app/
 EXPOSE 80
