@@ -1,5 +1,6 @@
 # FROM cirrusci/flutter:beta
-FROM nexcer/flutter-web
+FROM ontolabs/flutter-web
+
 USER root
 
 WORKDIR /app 
