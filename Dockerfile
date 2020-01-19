@@ -1,7 +1,8 @@
 FROM cirrusci/flutter:beta
 USER root
-WORKDIR /app 
+RUN mkdir /app
 COPY . /app 
+WORKDIR /app 
 RUN flutter config --enable-web 
 RUN flutter build web 
 
