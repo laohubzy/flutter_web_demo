@@ -29,9 +29,9 @@ docker run -p 9527:80 -d --name flutter_web flutter/web:$image_version;
 docker logs flutter_web;
 
 # #删除build过程中产生的镜像 re
-# docker rmi $(docker images -f "dangling=true" -q)
+docker rmi $(docker images -f "dangling=true" -q)
 
 # # 对空间进行自动清理
-# docker system prune -a -f
+docker system prune -a -f
 # cd /home/jenkins/jenkins_home/workspace/flutter_web_demo
 # docker run --rm -it -v ${PWD}:/build --workdir /build cirrusci/flutter:stable flutter  build web
