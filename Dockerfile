@@ -5,6 +5,7 @@ COPY . /app
 WORKDIR /app 
 RUN ls \
 && ls \
+&& flutter --version \
 && flutter config --enable-web \
 && flutter build web 
 
