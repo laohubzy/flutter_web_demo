@@ -1,8 +1,9 @@
 FROM cirrusci/flutter:beta
 USER root
-RUN mkdir /app
-COPY . /app 
+# RUN mkdir /app
+
 WORKDIR /app 
+COPY . /app
 RUN ls \
 && flutter --version \
 && ls \
@@ -15,6 +16,7 @@ RUN ls \
 
 FROM nginx
 # COPY conf.nginx /etc/nginx/nginx.conf
+RUN mkdir /app
 RUN ls 
 WORKDIR /app 
 RUN ls 
