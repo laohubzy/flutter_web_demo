@@ -9,6 +9,7 @@ RUN ls \
 && flutter --version \
 && ls \
 && flutter config --enable-web  \
+&& flutter packages get  \
 && flutter build web 
 
  
