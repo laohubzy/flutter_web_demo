@@ -11,6 +11,7 @@ RUN ls \
 && flutter config --enable-web  \
 && flutter --version \
 && flutter doctor \
+&& flutter config \
 && flutter pub get \
 && flutter build web --release
 
