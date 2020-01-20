@@ -9,10 +9,9 @@ COPY . /app
 RUN ls \
 && which flutter \
 && flutter config --enable-web  \
-&& flutter --version
-
-RUN flutter pub get
-RUN /bin/bash -c "sudo /home/cirrus/sdks/flutter/bin/flutter build web"
+&& flutter --version \
+&& /home/cirrus/sdks/flutter/bin/flutter pub get \
+&& /home/cirrus/sdks/flutter/bin/flutter build web
 
 FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
