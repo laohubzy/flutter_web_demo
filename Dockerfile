@@ -9,9 +9,10 @@ COPY . /app
 RUN ls \
 && which flutter \
 && flutter config --enable-web  \
-&& flutter --version \
-&& flutter pub get  \
-&& flutter build web 
+&& flutter --version
+
+RUN flutter pub get
+RUN flutter build web
 
 FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
