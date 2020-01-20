@@ -12,7 +12,7 @@ RUN ls \
 && flutter --version
 
 RUN flutter pub get
-RUN /bin/bash -c "sudo flutter build web"
+RUN /bin/bash -c "sudo /home/cirrus/sdks/flutter/bin/flutter build web"
 
 FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
