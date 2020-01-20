@@ -1,20 +1,17 @@
-# FROM cirrusci/flutter:latest
+FROM cirrusci/flutter:latest
 # /home/cirrus/sdks/flutter
-FROM ontolabs/flutter-web
+# FROM ontolabs/flutter-web
 
 USER root
 
 WORKDIR /app 
 COPY . /app
 RUN ls \
-&& ls \
+&& which flutter \
 && flutter config --enable-web  \
-&& sudo /opt/flutter/bin/flutter --version \
-&& sudo /opt/flutter/bin/flutter pub get  \
-&& sudo /opt/flutter/bin/flutter build web 
-
- 
-
+&& flutter --version \
+&& flutter pub get  \
+&& flutter build web 
 
 FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
