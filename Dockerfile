@@ -8,6 +8,7 @@ COPY . /app
 RUN ls \
 && ls \
 && flutter config --enable-web  \
+&& sudo /home/cirrus/sdks/flutter/bin/flutter --version \
 && sudo /home/cirrus/sdks/flutter/bin/flutter packages get  \
 && flutter build web 
 
