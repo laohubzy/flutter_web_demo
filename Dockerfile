@@ -8,9 +8,9 @@ COPY . /app
 RUN ls \
 && ls \
 && flutter config --enable-web  \
-&& sudo /home/cirrus/sdks/flutter/bin/flutter --version \
-&& sudo /home/cirrus/sdks/flutter/bin/flutter pub get  \
-&& sudo /home/cirrus/sdks/flutter/bin/flutter build web 
+&& sudo /opt/flutter/bin/flutter --version \
+&& sudo /opt/flutter/bin/flutter pub get  \
+&& sudo /opt/flutter/bin/flutter build web 
 
  
 
