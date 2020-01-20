@@ -1,4 +1,4 @@
-FROM cirrusci/flutter:latest
+FROM cirrusci/flutter:beta
 # /home/cirrus/sdks/flutter
 # FROM ontolabs/flutter-web
 
