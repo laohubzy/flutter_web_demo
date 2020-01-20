@@ -1,14 +1,15 @@
-# FROM cirrusci/flutter:beta
-FROM ontolabs/flutter-web
+FROM cirrusci/flutter:latest
+# FROM ontolabs/flutter-web
 
 USER root
 
 WORKDIR /app 
 COPY . /app
 RUN ls \
-&& flutter --version \
 && ls \
 && flutter config --enable-web  \
+&& flutter --version \
+&& flutter docker\
 && flutter packages get  \
 && flutter build web 
 
