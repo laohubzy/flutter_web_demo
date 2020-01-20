@@ -10,7 +10,7 @@ RUN ls \
 && flutter config --enable-web  \
 && sudo /home/cirrus/sdks/flutter/bin/flutter --version \
 && sudo /home/cirrus/sdks/flutter/bin/flutter pub get  \
-&& flutter build web 
+&& sudo /home/cirrus/sdks/flutter/bin/flutter build web 
 
  
 
