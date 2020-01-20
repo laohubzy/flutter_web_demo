@@ -12,7 +12,7 @@ RUN ls \
 && flutter --version \
 && flutter doctor \
 && flutter pub get \
-&& flutter build web
+&& flutter build web --release
 
 FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
