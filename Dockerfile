@@ -10,7 +10,7 @@ RUN ls \
 && which flutter \
 && flutter config --enable-web  \
 && flutter --version \
-&& flutter docker \
+&& flutter doctor \
 && flutter pub get \
 && flutter build web
 
