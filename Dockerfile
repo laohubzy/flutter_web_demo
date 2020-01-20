@@ -1,5 +1,5 @@
-FROM cirrusci/flutter:latest
-# FROM ontolabs/flutter-web
+# FROM cirrusci/flutter:latest
+FROM ontolabs/flutter-web
 
 USER root
 
@@ -9,7 +9,7 @@ RUN ls \
 && ls \
 && flutter config --enable-web  \
 && sudo /home/cirrus/sdks/flutter/bin/flutter --version \
-&& sudo /home/cirrus/sdks/flutter/bin/flutter packages get  \
+&& sudo /home/cirrus/sdks/flutter/bin/flutter pub get  \
 && flutter build web 
 
  
