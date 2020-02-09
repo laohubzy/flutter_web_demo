@@ -1,4 +1,4 @@
-FROM cirrusci/flutter:beta
+FROM cirrusci/flutter:latest
 # /home/cirrus/sdks/flutter
 # FROM ontolabs/flutter-web
 
@@ -10,10 +10,8 @@ RUN ls \
 && which flutter \
 && flutter config --enable-web  \
 && flutter --version \
-&& flutter doctor \
-&& flutter config \
-&& flutter pub get \
-&& flutter build web --release
+&& flutter pub get  \
+&& flutter build web 
 
 FROM nginx
 COPY conf.nginx /etc/nginx/nginx.conf
