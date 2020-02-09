@@ -10,7 +10,6 @@ RUN ls \
 && which flutter \
 && flutter config --enable-web  \
 && flutter --version \
-&& flutter clean \
 && flutter pub get  \
 && flutter build 
 
