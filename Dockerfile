@@ -11,7 +11,7 @@ RUN ls \
 && flutter config --enable-web  \
 && flutter --version \
 && flutter pub get  \
-&& flutter build 
+&& flutter build apk
 
 # FROM nginx
 # COPY conf.nginx /etc/nginx/nginx.conf
