@@ -7,7 +7,8 @@ image_version=`date +%Y%m%d%H%M`;
 
 # 关闭flutter_web容器
 # docker stop flutter_web || true
-
+flutter config --enable-web;
+flutter build web;
 # 删除flutter_web容器
 # docker rm flutter_web || true
 
