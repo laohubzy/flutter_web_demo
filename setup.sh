@@ -8,7 +8,7 @@ image_version=`date +%Y%m%d%H%M`;
 # 关闭flutter_web容器
 # docker stop flutter_web || true
 echo $PATH;
-echo pws;
+echo psw;
 flutter config --enable-web;
 flutter build web;
 # 删除flutter_web容器
