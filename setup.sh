@@ -19,6 +19,8 @@ export ANDROID_HOME=/home/android/android-sdk-linux;
 export PATH=$PATH:$ANDROID_HOME/tools;
 export PATH=$PATH:$ANDROID_HOME/platform;
 
+cd /home;
+ls;
 flutter config --enable-web;
 flutter build web;
 # 删除flutter_web容器
