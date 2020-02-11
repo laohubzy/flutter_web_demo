@@ -35,5 +35,5 @@ WORKDIR /app
 # COPY /app/build/web /app
 # WORKDIR /app 
 # RUN ls 
-COPY ./build/web /home/app/
+COPY ./build/web /app/
 EXPOSE 80
