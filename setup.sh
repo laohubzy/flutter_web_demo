@@ -10,9 +10,15 @@ image_version=`date +%Y%m%d%H%M`;
 echo $PATH;
 #假设脚本放置在与项目相同的路径下
 # flutter环境变量设置
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export PATH=/home/flutter/bin:$PATH
+export PATH=/home/flutter/bin:$PATH;
+export JAVA_HOME=/home/java/jdk1.8.0_241;
+export JRE_HOME=${JAVA_HOME}/jre;
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib;
+export  PATH=${JAVA_HOME}/bin:$PATH;
+export ANDROID_HOME=/home/android/android-sdk-linux;
+export PATH=$PATH:$ANDROID_HOME/tools;
+export PATH=$PATH:$ANDROID_HOME/platform;
+
 flutter config --enable-web;
 flutter build web;
 # 删除flutter_web容器
