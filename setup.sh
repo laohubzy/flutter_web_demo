@@ -7,22 +7,22 @@ image_version=`date +%Y%m%d%H%M`;
 
 # 关闭flutter_web容器
 # docker stop flutter_web || true
-echo $PATH;
-#假设脚本放置在与项目相同的路径下
-# flutter环境变量设置
-export PATH=/home/flutter/bin:$PATH;
-export JAVA_HOME=/home/java/jdk1.8.0_241;
-export JRE_HOME=${JAVA_HOME}/jre;
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib;
-export  PATH=${JAVA_HOME}/bin:$PATH;
-export ANDROID_HOME=/home/android/android-sdk-linux;
-export PATH=$PATH:$ANDROID_HOME/tools;
-export PATH=$PATH:$ANDROID_HOME/platform;
+# echo $PATH;
+# #假设脚本放置在与项目相同的路径下
+# # flutter环境变量设置
+# export PATH=/home/flutter/bin:$PATH;
+# export JAVA_HOME=/home/java/jdk1.8.0_241;
+# export JRE_HOME=${JAVA_HOME}/jre;
+# export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib;
+# export  PATH=${JAVA_HOME}/bin:$PATH;
+# export ANDROID_HOME=/home/android/android-sdk-linux;
+# export PATH=$PATH:$ANDROID_HOME/tools;
+# export PATH=$PATH:$ANDROID_HOME/platform;
 
-cd /home;
-ls;
-flutter config --enable-web;
-flutter build web;
+# cd /home;
+# ls;
+# flutter config --enable-web;
+# flutter build web;
 # 删除flutter_web容器
 # docker rm flutter_web || true
 

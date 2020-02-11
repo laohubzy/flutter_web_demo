@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
+        // This is the theme ofR your application.
         //
         // Try running your application with "flutter run". You'll see the
         // application has a blue toolbar. Then, without quitting the app, try
@@ -24,6 +24,38 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
+    // return Container(
+    //   decoration: BoxDecoration(
+    //     gradient: LinearGradient(
+    //       colors: <Color>[
+    //         Color.fromRGBO(63, 43, 150, 1),
+    //         Color.fromRGBO(168, 192, 255, 1),
+    //       ],
+    //       begin: Alignment.centerRight,
+    //       end: Alignment.centerLeft,
+    //     )
+    //   ),
+    //   child: Image.asset('images/live_beijing.png', fit: BoxFit.contain,),
+    // );
+    // return ConstrainedBox(
+    //     constraints: BoxConstraints.expand(),
+    //     child: Container(
+    //       decoration: BoxDecoration(
+    //         gradient: LinearGradient(
+    //           colors: <Color>[
+    //             Color.fromRGBO(63, 43, 150, 1),
+    //             Color.fromRGBO(168, 192, 255, 1),
+    //           ],
+    //           begin: Alignment.centerRight,
+    //           end: Alignment.centerLeft,
+    //         )
+    //       ),
+    //       // Image.asset('images/live_beijing.png', fit: BoxFit.contain,),
+          
+    //       child: Box
+    //     ),
+    //   );
+    
   }
 }
 
@@ -46,18 +78,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,49 +88,69 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'aksdjkafjkfajf',
-            ),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // appBar: AppBar(
+      //   // Here we take the value from the MyHomePage object that was created by
+      //   // the App.build method, and use it to set our appbar title.
+      //   title: Text(widget.title),
+      // ),
+      body: ConstrainedBox(
+        constraints: BoxConstraints.expand(),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: <Color>[
+                Color.fromRGBO(63, 43, 150, 1),
+                Color.fromRGBO(168, 192, 255, 1),
+              ],
+              begin: Alignment.centerRight,
+              end: Alignment.centerLeft,
+            )
+          ),
+          // Image.asset('images/live_beijing.png', fit: BoxFit.contain,),
+          
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              Image.asset('images/live_beijing.png', fit: BoxFit.contain,),
+              Positioned(
+                top: 40,
+                right: 0,
+                left: 0,
+                bottom: 0,
+                child: Column(
+                  children: <Widget>[
+                    Text('Tips LIVE', 
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold
+                    ),),
+                    SizedBox(height: 20,),
+                    Text('(1) Bagaimana sistem penghitungan Ranking? ', 
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400
+                    ),),
+                    SizedBox(height: 10,),
+                    Padding(
+                      padding: EdgeInsets.only(left: 40, right: 40),
+                      child: Text('SUPERSTAR dihitung berdasarkan peringkat akumulasi dari "tingkat popularitas", 20 penyiar teratas akan masuk ke dalam daftar Ranking.', 
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.white,
+                        ),),
+                    )
+                    ,
+                    
+                  ],
+                ),
+              )
+            ],
+          )
+        )
+    //   );, // This trailing comma makes auto-formatting nicer for build methods.
+      )
     );
   }
 }
