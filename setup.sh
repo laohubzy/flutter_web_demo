@@ -8,7 +8,11 @@ image_version=`date +%Y%m%d%H%M`;
 # 关闭flutter_web容器
 # docker stop flutter_web || true
 echo $PATH;
-echo $psw;
+#假设脚本放置在与项目相同的路径下
+# flutter环境变量设置
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export PATH=/home/flutter/bin:$PATH
 flutter config --enable-web;
 flutter build web;
 # 删除flutter_web容器
